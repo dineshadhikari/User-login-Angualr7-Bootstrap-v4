@@ -40,13 +40,14 @@ export class AppComponent {
       password: this.loginForm.value.password
     };
 
+    console.log(body)
     this.authService.login(body).subscribe((data: any) => {
-      //your will data success or false
+      //your will get data success or false
       if (data.success) {
         //do some action
       } else {
         //do some action
-        //show error mesage
+        //show error message
       }
     })
   }

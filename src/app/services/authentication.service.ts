@@ -21,11 +21,12 @@ export class AuthenticationService {
     return this.http
       .post<any>(this.baseUrl + "user-login", body)
       .pipe(
-        map(user => {
-          if (user.success) {
+        map(data => {
+          if (data.success) {
+            //do some action
             localStorage.setItem("IsLogin", "true")
           } 
-          return user
+          return data
         })
       )
   }
